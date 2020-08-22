@@ -14,7 +14,7 @@ export const PokemonContent = styled.article`
     box-shadow: 0px 15px 25px rgba(0, 0, 0, 0.1);
     .thumbnail {
       background-image: url(${Back});
-      background-color: ${({ color }) => `${theme.global.types[color]}80` };
+      background-color: ${({ color }) => `${theme.global.types[color]}` };
       figure::before {
         background: rgba(0, 0, 0, 0.2);
         transition: all 0.3s ease-in-out;
@@ -85,6 +85,7 @@ export const PokemonNumber = styled.p`
 `;
 
 export const PokemonPosition = styled.strong`
+  margin-left: 5px;
   color: ${({ color }) => theme.global.types[color] };
 `;
 

@@ -1,5 +1,4 @@
-import React from 'react';
-import { useQuery } from 'react-query';
+import React, { useState, useEffect } from 'react';
 import { fetchPokemons } from '../../services/pokemons';
 
 import Container from '../Container';
@@ -8,21 +7,24 @@ import Grid from '../Grid';
 
 const PokemonsList = () => {
 
-  const { data: pokemonsData } = useQuery(
-    'pokemonList',
-    fetchPokemons,
-  );
+  const [pokemonList, setpokemonList] = useState([]);
 
-  const pokemons = pokemonsData?.data.results || [];
-
-  if (pokemons.length === 0) {
+  useEffect(() => {
+    fetchPokemons().then((res) => {
+      setpokemonList([
+        ...res.data.results,
+      ]);
+    });
+  }, []);
+  
+  if (pokemonList.length === 0) {
     return <Container>Loading...</Container>
   }
   return (
     <Container>
       <Grid>
         {
-          pokemons.map(({ name }) => {
+          pokemonList.map(({ name }) => {
             return <Pokemon key={name} find={name} />
           })
         }

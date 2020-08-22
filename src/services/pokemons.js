@@ -1,13 +1,11 @@
 import request from '../utils/request';
 import { POKEMONS, POKEMON_DETAIL } from '../endpoints';
 
-export function fetchPokemons(key, params = {}) {
-  return request(POKEMONS, {
-    params: params,
-  });
+/*PARA OBTENER LOS PRIMEROS 20 POKEMONES*/
+export function fetchPokemons() {
+  return request(POKEMONS);
 }
-
+/*PARA OBTENER DETALLE POKEMON POR NOMBRE*/
 export function fetchPokemonDetail(pokemonName) {
   return request(POKEMON_DETAIL(pokemonName));
 }
-

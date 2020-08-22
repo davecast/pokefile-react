@@ -31,7 +31,7 @@ const Pokemon = ({ find }) => {
 
   const { name, id, types } = pokemon;
 
-  if (Object.keys(pokemon).length === 0 && pokemon.constructor === Object) {
+  if (Object.keys(pokemon).length === 0) {
     return (
       <PokemonContent>
         <PokemonThumbnail></PokemonThumbnail>
@@ -53,7 +53,7 @@ const Pokemon = ({ find }) => {
         <PokemonMeta>
           <PokemonName>{name}</PokemonName>
           <PokemonNumber>
-            Número{" "}
+            Número 
             <PokemonPosition color={getType(types)}>
               #{setNumberPokemon(id)}
             </PokemonPosition>
@@ -71,21 +71,3 @@ const Pokemon = ({ find }) => {
 };
 
 export default Pokemon;
-
-/*const [pokemon, setPokemon] = useState([]);
-
-  useEffect( () => {
-    async function fetchPokemon () {
-      let response = await fetch('https://pokeapi.co/api/v2/pokemon/charmander');
-
-      let json = await response.json();
-      console.log(json);
-      setPokemon(json);
-    }
-    
-    fetchPokemon();
-  }, [setPokemon])
-
-  if (pokemon.length === 0) {
-    return <>Loading....</>
-  }*/
