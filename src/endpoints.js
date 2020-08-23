@@ -1,6 +1,10 @@
-const API_V2 = "https://pokeapi.co/api/v2/";
+import { API_V2 } from './constants';
 
 //Pokemons
 export const POKEMONS = `${API_V2}pokemon/`;
 export const POKEMON_DETAIL = (pokemonName) =>
   `${POKEMONS}${pokemonName}/`;
+
+
+
+

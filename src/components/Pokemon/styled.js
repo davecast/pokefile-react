@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import Back from "./images/back.png";
-import theme from '../../styles/theme';
-import { TYPES_IMAGES } from './images';
+import theme from "../../styles/theme";
+import { TYPES_IMAGES } from "../../constants";
 
 export const PokemonContent = styled.article`
   border-radius: 30px;
@@ -14,7 +14,7 @@ export const PokemonContent = styled.article`
     box-shadow: 0px 15px 25px rgba(0, 0, 0, 0.1);
     .thumbnail {
       background-image: url(${Back});
-      background-color: ${({ color }) => `${theme.global.types[color]}` };
+      background-color: ${({ color }) => `${theme.global.types[color]}`};
       figure::before {
         background: rgba(0, 0, 0, 0.2);
         transition: all 0.3s ease-in-out;
@@ -81,12 +81,12 @@ export const PokemonNumber = styled.p`
   font-size: 14px;
   line-height: 14px;
   margin: 0;
-  color: #dbdbdb;
+  color: #c7c7c7;
 `;
 
 export const PokemonPosition = styled.strong`
   margin-left: 5px;
-  color: ${({ color }) => theme.global.types[color] };
+  color: ${({ color }) => theme.global.types[color]};
 `;
 
 export const PokemonTypes = styled.ul`
@@ -103,5 +103,5 @@ export const PokemonType = styled.li`
   height: 30px;
   background-size: cover;
   background-position: center;
-  background-image: url(${({ type }) => TYPES_IMAGES[type] });
+  background-image: url(${({ type }) => TYPES_IMAGES[type]});
 `;

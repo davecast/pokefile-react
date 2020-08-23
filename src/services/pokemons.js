@@ -1,5 +1,5 @@
-import request from '../utils/request';
-import { POKEMONS, POKEMON_DETAIL } from '../endpoints';
+import request from "../utils/request";
+import { POKEMONS, POKEMON_DETAIL } from "../endpoints";
 
 /*PARA OBTENER LOS PRIMEROS 20 POKEMONES*/
 export function fetchPokemons() {

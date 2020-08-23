@@ -1,9 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { fetchPokemonDetail } from "../../services/pokemons";
 import { setNumberPokemon, getType } from "../../utils/helpers";
-
 import { IMAGE_ENDPOINT } from "../../constants";
-
 import {
   PokemonContent,
   PokemonThumbnail,
@@ -18,7 +16,7 @@ import {
   PokemonType,
 } from "./styled";
 
-const Pokemon = ({ find }) => {
+export default function Pokemon({ find }) {
   const [pokemon, setPokemon] = useState({});
 
   useEffect(() => {
@@ -53,7 +51,7 @@ const Pokemon = ({ find }) => {
         <PokemonMeta>
           <PokemonName>{name}</PokemonName>
           <PokemonNumber>
-            Número 
+            Número
             <PokemonPosition color={getType(types)}>
               #{setNumberPokemon(id)}
             </PokemonPosition>
@@ -68,6 +66,4 @@ const Pokemon = ({ find }) => {
       </PokemonInfo>
     </PokemonContent>
   );
-};
-
-export default Pokemon;
+}

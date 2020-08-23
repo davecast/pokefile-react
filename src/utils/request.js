@@ -1,10 +1,8 @@
-import axios from 'axios';
+import axios from "axios";
 
-export default function request(
-  url
-) {
+export default function request(url) {
   return axios.request({
-    method: 'GET',
+    method: "GET",
     url,
   });
 }
